@@ -31,20 +31,19 @@ class UrlService {
   }
 
 
-
-
-  static async findMiniUrlById(urlId) {
+  static async findUrlById(urlId) {
     try {
       const url = await Url.findByPk(urlId);
       if (!url) {
         throw new Error("URL not found");
       }
-
-      return url.miniUrl || null;
+  
+      return url.url || null; 
     } catch (error) {
-      throw new Error("Error finding mini URL by ID: " + error.message);
+      throw new Error("Error finding URL by ID: " + error.message);
     }
   }
+  
   
 }
 
