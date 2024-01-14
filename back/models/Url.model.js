@@ -1,6 +1,5 @@
 const db = require("../config/db");
 const Sequelize = require("sequelize");
-const bcrypt = require("bcrypt");
 
 class Url extends Sequelize.Model {
 
