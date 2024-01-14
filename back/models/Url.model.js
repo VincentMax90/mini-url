@@ -13,6 +13,7 @@ Url.init(
     },
     miniUrl: {
       type: Sequelize.STRING,
+      
     },
 
   },
