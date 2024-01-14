@@ -24,8 +24,8 @@ class UrlController {
     const { id } = req.params;
 
     try {
-      const miniUrl = await UrlService.findUrlById(id);
-      res.json({ miniUrl });
+      const url = await UrlService.findUrlById(id);
+      res.json({ url });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

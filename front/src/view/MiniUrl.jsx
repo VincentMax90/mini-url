@@ -11,7 +11,7 @@ const MiniUrl = () => {
       try {
         const response = await axios.get(`http://localhost:3001/api/url/${id}`);
        
-        setOriginalUrl(response.data.miniUrl);
+        setOriginalUrl(response.data.url);
       } catch (error) {
         console.error("Error fetching URL:", error.message);
       }
