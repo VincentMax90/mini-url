@@ -16,7 +16,6 @@ const Index = () => {
       console.error("Error generando Mini URL:", error.message);
     }
   };
-console.log(miniUrl)
   return (
     <>
       <div>

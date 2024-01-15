@@ -29,7 +29,6 @@ const MiniUrl = () => {
   }, [originalUrl]);
 
 
-  console.log(originalUrl)
   return (
     <>
       <div>Redireccionando a la URL correspondiente...</div>
