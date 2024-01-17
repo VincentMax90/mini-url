@@ -7,15 +7,24 @@ const Index = () => {
 
   const handleGenerateMiniUrl = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/api/url/create", {
-        url: url,
-      });
+      const formattedUrl =
+        url.startsWith("http://") || url.startsWith("https://")
+          ? url
+          : `http://${url}`;
+
+      const response = await axios.post(
+        "http://localhost:3001/api/url/create",
+        {
+          url: formattedUrl,
+        }
+      );
 
       setMiniUrl(response.data.url.miniUrl);
     } catch (error) {
       console.error("Error generando Mini URL:", error.message);
     }
   };
+
   return (
     <>
       <div>
@@ -23,7 +32,7 @@ const Index = () => {
         <label>
           Ingresa la URL:
           <input
-          placeholder="https://www.ejemplo.com/"
+            placeholder="https://www.ejemplo.com/"
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
