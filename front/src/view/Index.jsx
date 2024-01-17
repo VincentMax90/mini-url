@@ -7,6 +7,11 @@ const Index = () => {
 
   const handleGenerateMiniUrl = async () => {
     try {
+      if (!url.trim()) {
+        alert("Introduzca una url");
+        return;
+      }
+
       const formattedUrl =
         url.startsWith("http://") || url.startsWith("https://")
           ? url
